@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  wordpress:
+    build: WordPress
+    ports:
+      - "9000:9000"
+    volumes:
+      - wordpressShare:/var/www/html/wordpress
+    # restart: always
+    # environment:
+    #   WORDPRESS_DB_NAME: ${DB_NAME}
+    #   WORDPRESS_DB_USER: ${DB_USER}
+    #   WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    #   WORDPRESS_DB_HOST: ${DB_HOST}
+    networks:
+      - TrizTrontSatt
+  nginx:
+    build: Nginx
+    ports:
+      - "443:443"
+    volumes:
+      - wordpressShare:/usr/share/nginx/html
+    restart: always
+    # depends_on:
+    #   - wordpress
+    networks:
+      - TrizTrontSatt
+
+  # mariadb:
+  #   build: MariaDB
+  #   ports:
+  #     - "3306:80"
+  #   # environment:
+  #   #   MYSQL_DATABASE: ${DB_NAME}
+  #   #   MYSQL_USER: ${DB_USER}
+  #   #   MYSQL_PASSWORD: ${DB_PASSWORD}
+  #     # MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+  #   networks:
+  #     - TrizTrontSatt
+
+networks:
+  TrizTrontSatt:
+    driver: bridge
+
+volumes:
+  wordpressShare:
