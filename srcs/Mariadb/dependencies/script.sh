@@ -13,7 +13,9 @@ if [ ! -d "/var/run/mysqld" ]; then
 	mkdir -p /var/run/mysqld && chown -R mysql:mysql /var/run/mysqld && chmod 777 /var/run/mysqld
 fi
 
-systemctl start mysqld
+if [ ! -d "/var/run/mysqld" ]; then
+	mysql_install_db --user=mysql --datadir=/var/lib/mysql --skip-test-db
+fi
 
 if [ ! -d "/var/lib/mysql/${WORDPRESS_DATABASE_NAME}" ]; then
 

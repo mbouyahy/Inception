@@ -1,10 +1,10 @@
 FROM debian:buster
 
 # RUN apk update && apk upgrade && apk add --no-cache mariadb mariadb-client
-RUN apt-get update && \
-	apt-get install -y mariadb-server mariadb-client && \
-	apt-get autoremove && \
-	apt-get clean && \
+RUN apt update && \
+	apt install -y mariadb-server && \
+	apt autoremove && \
+	apt clean && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # RUN mkdir -p /run/mysqld && \
@@ -53,5 +53,5 @@ RUN chmod -R 644 /var/lib/mysql/*
 ENTRYPOINT ["sh", "script.sh"]
 
 # CMD ["mysqld_safe", "--skip-grant-tables&"]
-CMD ["mariadb", "--user=mysql"]
+CMD ["mariadb", "--user=mysql", "--bind-address=0.0.0.0"]
 # CMD ["mariadbd" ,"--user=root", "--bootstrap"]
