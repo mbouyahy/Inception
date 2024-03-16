@@ -9,15 +9,15 @@ FROM debian:bookworm
 # 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN apt-get update && \
-    apt-get install -y mariadb-server mariadb-client && \
+    apt-get install -y mariadb-server && \
     apt-get clean
 
-# RUN mkdir -p /run/mysqld && \
-# 	chmod 777 /run/mysqld
+RUN mkdir -p /run/mysqld && \
+	chmod 777 /run/mysqld
 
 # RUN sed -i "s|skip-networking|#skip-networking|g" /etc/my.cnf.d/mariadb-server.cnf
 # RUN echo "datadir = /var/lib/mysql" >> /etc/my.cnf.d/mariadb-server.cnf
-RUN sed -i "s|bind-address            = 127.0.0.1|bind-address            = 0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
+# RUN sed -i "s|bind-address            = 127.0.0.1|bind-address            = 0.0.0.0|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 # RUN sed -i "s|skip-networking|#skip-networking|g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql --skip-test-db
@@ -40,12 +40,12 @@ COPY ./dependencies/script.sh /script.sh
 # RUN chmod 777 ./dependencies/my.cnf
 
 COPY ./dependencies/my.cnf /etc/mysql/my.cnf
-# COPY ./dependencies/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY ./dependencies/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # RUN rm -rf /var/lib/mysql/mysql
 
 RUN chmod 644 /etc/mysql/my.cnf
-# RUN chmod 644 /etc/mysql/mariadb.conf.d/50-server.cnf
+RUN chmod 644 /etc/mysql/mariadb.conf.d/50-server.cnf
 # RUN chown -R mysql:mysql /var/lib/mysql/
 # RUN chmod -R 755 /var/lib/mysql/
 # RUN chmod -R 755 /etc/mysql/conf.d
@@ -56,17 +56,19 @@ RUN chmod 644 /etc/mysql/my.cnf
 # RUN chmod 600 /var/lib/mysql/ddl_recovery.log
 
 #remove this before using docker compose
-ENV WORDPRESS_DATABASE_NAME="wordpress"
-ENV DATABASE_ROOT_PASSWD="1234"
-ENV DATABASE_USER="mbouyahy"
-ENV DATABASE_PASSWORD="1234"
+# ENV WORDPRESS_DATABASE_NAME="wordpress"
+# ENV DATABASE_ROOT_PASSWD="1234"
+# ENV DATABASE_USER="mbouyahy"
+# ENV DATABASE_PASSWORD="1234"
 
 # RUN rm -rf /var/lib/mysql/*
 
-ENTRYPOINT ["/etc/init.d/mariadbd", "start"]
+# ENTRYPOINT ["/etc/init.d/mariadbd", "start"]
+# ENTRYPOINT ["/etc/init.d/mariadbd", "status"]
 
 ENTRYPOINT ["sh", "script.sh"]
 
 # CMD ["mysqld_safe", "--skip-grant-tables&"]
 # CMD ["mysqld","--bind-address=0.0.0.0"]
-CMD ["mariadbd" ,"--bind-address=0.0.0.0"]
+CMD ["mysqld" ,"--user=mysql"]
+# CMD ["mysqld" ,"--user=mysql", "--bind-address=0.0.0.0"]
