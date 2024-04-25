@@ -49,6 +49,8 @@
     <li>Explore Docker CLI commands for managing containers, images, networks, and volumes.</li>
     <li>Practice building and running Docker containers using sample applications.</li>
  </ol>
+ <h3>Read this before starting (Recommanded!) </h3>
+ ...
  <h2>Creating Containers from Scratch</h2>
  <p>Creating containers from scratch involves several key steps:</p>
  <ol>
