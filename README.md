@@ -47,9 +47,10 @@
     <li>Install Docker on your machine by following the instructions provided on the <a target="_new">official Docker website</a>.</li>
     <li>Familiarize yourself with Docker concepts such as images, containers, volumes, and networks.</li>
     <li>Explore Docker CLI commands for managing containers, images, networks, and volumes.</li>
-    <li>Practice building and running Docker containers using sample applications.</li>
+    <li>Practice building and running Docker containers using simple applications.</li>
  </ol>
  <h3>Read this before starting (Recommanded!) </h3>
+ 
  ...
  <h2>Creating Containers from Scratch</h2>
  <p>Creating containers from scratch involves several key steps:</p>
