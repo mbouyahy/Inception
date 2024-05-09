@@ -9,8 +9,8 @@
     <li><a target="_new" href="#docker-engine">Docker Engine</a></li>
     <li><a target="_new" href="#containers">Containers</a></li>
     <li><a target="_new" href="#getting-started">Getting Started</a></li>
-    <li><a target="_new" href="#getting-started">Using GitHub Codespaces</a></li>
-    <li><a target="_new" href="#getting-started">Keep your work clean and organized</a></li>
+    <li><a target="_new" href="#Using=GitHub-Codespaces">Using GitHub Codespaces</a></li>
+    <li><a target="_new" href="#Keep-your-work-clean-and-organized">Keep your work clean and organized</a></li>
     <li><a target="_new" href="#creating-containers-from-scratch">Creating Containers from Scratch</a></li>
     <li><a target="_new" href="#best-practices">Best Practices</a></li>
     <li><a target="_new" href="#conclusion">Conclusion</a></li>
