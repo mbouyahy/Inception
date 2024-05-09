@@ -10,6 +10,7 @@
     <li><a target="_new" href="#containers">Containers</a></li>
     <li><a target="_new" href="#getting-started">Getting Started</a></li>
     <li><a target="_new" href="#getting-started">Using GitHub Codespaces</a></li>
+    <li><a target="_new" href="#getting-started">Keep your work clean and organized</a></li>
     <li><a target="_new" href="#creating-containers-from-scratch">Creating Containers from Scratch</a></li>
     <li><a target="_new" href="#best-practices">Best Practices</a></li>
     <li><a target="_new" href="#conclusion">Conclusion</a></li>
@@ -67,6 +68,56 @@
 </ol>
 
 <p>For more details about GitHub CodeSpaces, please refer to <a href="https://docs.github.com/en/codespaces/overview">GitHub's official documentation</a>.</p>
+
+ <h2>Keep your work clean and organized</h2>
+<blockquote>
+  <p>For gain the time and your work be clean I advise you to work with this method, it’s easy and I will explain it step-by-step.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>The first step is to create a Docker Compose file containing all the services you work on, based on Docker registry images. For example:</p>
+    <pre><code>version: '3.8'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: example
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: example
+
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - wordpress
+</code></pre>
+  </li>
+  <li>
+    <p>Start working on each service one by one (I recommend starting with the order in 42 inception subject).</p>
+  </li>
+</ol>
+
 
  <!-- end -->
  <h2>Creating Containers from Scratch</h2>
