@@ -9,6 +9,7 @@
     <li><a target="_new" href="#docker-engine">Docker Engine</a></li>
     <li><a target="_new" href="#containers">Containers</a></li>
     <li><a target="_new" href="#getting-started">Getting Started</a></li>
+    <li><a target="_new" href="#getting-started">Using GitHub Codespaces</a></li>
     <li><a target="_new" href="#creating-containers-from-scratch">Creating Containers from Scratch</a></li>
     <li><a target="_new" href="#best-practices">Best Practices</a></li>
     <li><a target="_new" href="#conclusion">Conclusion</a></li>
@@ -49,10 +50,9 @@
     <li>Explore Docker CLI commands for managing containers, images, networks, and volumes.</li>
     <li>Practice building and running Docker containers using simple applications.</li>
  </ol>
- <h3>Read this before starting (Recommanded!) </h3>
+<!--  <h3>Read this before starting (Recommanded!) </h3> -->
  <!-- start -->
- <h2>Using GitHub Codespaces for working on your Inception project is a great idea! Here's a step-by-step guide on how to set it up:</h2>
-
+ <h2>Using GitHub Codespaces </h2>
 <ol>
   <li><strong>Access Your Repository:</strong> Navigate to your Inception 42 project repository on GitHub.</li>
   <li><strong>Enable Codespaces:</strong> If your repository is enabled for Codespaces, you'll see a "Code" dropdown button next to the "Clone or download" button. Click on it and select "Open with Codespaces." If Codespaces is not enabled, you may need to enable it in the repository settings.</li>
