@@ -69,7 +69,6 @@
 <p>For more details about GitHub CodeSpaces, please refer to <a href="https://docs.github.com/en/codespaces/overview">GitHub's official documentation</a>.</p>
 
  <!-- end -->
- ...
  <h2>Creating Containers from Scratch</h2>
  <p>Creating containers from scratch involves several key steps:</p>
  <ol>
