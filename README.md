@@ -50,7 +50,25 @@
     <li>Practice building and running Docker containers using simple applications.</li>
  </ol>
  <h3>Read this before starting (Recommanded!) </h3>
- 
+ <!-- start -->
+ <h2>Using GitHub Codespaces for working on your Inception project is a great idea! Here's a step-by-step guide on how to set it up:</h2>
+
+<ol>
+  <li><strong>Access Your Repository:</strong> Navigate to your Inception 42 project repository on GitHub.</li>
+  <li><strong>Enable Codespaces:</strong> If your repository is enabled for Codespaces, you'll see a "Code" dropdown button next to the "Clone or download" button. Click on it and select "Open with Codespaces." If Codespaces is not enabled, you may need to enable it in the repository settings.</li>
+  <li><strong>Create a New Codespace:</strong> If this is your first time using Codespaces for this repository, GitHub will prompt you to create a new Codespace. Click on "New codespace" and wait for GitHub to set up your development environment.</li>
+  <li><strong>Accessing the Codespace:</strong> Once your Codespace is created, you'll be taken to a new browser tab where you can access your development environment. This environment will contain everything you need to start working on your project, including the necessary tools and dependencies.</li>
+  <li><strong>Open VS Code:</strong> Launch Visual Studio Code on your local machine.</li>
+  <li><strong>Install the GitHub Codespaces Extension:</strong> If you haven't already, you need to install the GitHub Codespaces extension for Visual Studio Code. You can find it in the VS Code Extensions Marketplace. Search for "GitHub Codespaces" and install the extension.</li>
+  <li><strong>Sign In to GitHub:</strong> Make sure you are signed in to your GitHub account within VS Code. You can do this by clicking on the GitHub icon in the activity bar on the side and following the prompts to sign in.</li>
+  <li><strong>Open Codespace:</strong> Once you're signed in, you should see a list of your GitHub repositories that have Codespaces enabled. Locate your Inception 42 project repository in the list and click on it to open it in a Codespace. If you don't see your repository, make sure it has Codespaces enabled.</li>
+  <li><strong>Connect to Codespace:</strong> VS Code will connect to the Codespace and set up a remote development environment. This might take a moment, especially if it's the first time you're connecting to the Codespace.</li>
+  <li><strong>Start Coding:</strong> Once the connection is established, you can start coding in VS Code as you normally would. You'll have access to all the files in your repository and can use all the features of VS Code, including code editing, debugging, and source control.</li>
+</ol>
+
+<p>For more details about GitHub CodeSpaces, please refer to <a href="https://docs.github.com/en/codespaces/overview">GitHub's official documentation</a>.</p>
+
+ <!-- end -->
  ...
  <h2>Creating Containers from Scratch</h2>
  <p>Creating containers from scratch involves several key steps:</p>
